@@ -2,8 +2,9 @@
 const colorBox = document.getElementById("colorBox");
 const optionsContainer = document.getElementById("guessOptions");
 const scoreText = document.getElementById("score");
-const newGameBtn = document.getElementById("newGame");
+// const newGameBtn = document.getElementById("newGame");
 const messageText = document.getElementById("message");
+const actionButtons = document.getElementById("actionButtons");
 
 let playerName = prompt("What is your name?");
 if (!playerName) playerName = "Player";
@@ -56,7 +57,7 @@ function createSimilarColor(baseColor, difference) {
 }
 
 function getDifficulty() {
-  if (score < 5) return 100;   // Easy
+  if (score < 5) return 120;   // Easy
   if (score < 15) return 50;  // Medium
   return 35;                 // Hard
 }
@@ -69,12 +70,13 @@ function showWelcome() {
   actionButtons.innerHTML = "";
 
   messageText.className = "game-message welcome";
-  messageText.textContent =
-    `Welcome ${playerName} 👋
-This is MorcoBle Colour Guessing Game 🎨
-A simple game with a clever twist
-Take a breath, relax, and trust your eyes.
-Something fun and a little tricky 😉`;
+  messageText.innerHTML =
+    `<strong>Welcome ${playerName} 👋</strong><br><br>
+This is <strong>MorcoBle Color Guessing Game 🎨</strong> <br><br>
+ A simple game with a clever twist 😉<br>
+No rush. No pressure.<br>
+Just colours, focus, and a bit of fun waiting for you 👀✨
+`;
 
   const okBtn = document.createElement("button");
   okBtn.textContent = "OK, let's play 😉🎮";
@@ -124,13 +126,13 @@ function startGame() {
   actionButtons.innerHTML = "";
 
   messageText.className = "game-message";
-  messageText.textContent = "Guess the correct colour 👇";
+  messageText.textContent = "What's the correct colour 👇";
   messageText.style.color = "#333";
 
 
     const okBtn = document.createElement("button");
-  okBtn.textContent = " New Game🎮";
-  okBtn.addEventListener("click", showWelcome);
+  okBtn.textContent = "New Game🎮";
+  okBtn.addEventListener("click", startGame);
 
   actionButtons.appendChild(okBtn);
 
@@ -179,7 +181,7 @@ function loadRound() {
                 messageText.style.color = "green";
 
                       setTimeout(() => {
-          messageText.textContent = "Guess the correct colour 👇";
+          messageText.textContent = "What's the correct colour 👇";
           messageText.style.color = "#333";
           loadRound();
         }, 600);
@@ -244,8 +246,8 @@ function endGame() {
       `🔥 Great play ${playerName}!  
        Final score: ${score}`;
   } else {
-    messageText.textContent =
-      `Nice try😉! ${playerName}.  
+    messageText.innerHTML =
+      `Nice try😉! ${playerName}. <br>  
        Your final score is ${score}`;
   }
 
@@ -267,10 +269,10 @@ function thankYouMessage() {
    scoreText.innerHTML = "";
    optionsContainer.innerHTML = "";
   messageText.className = "game-message welcome";
-  messageText.textContent =
-    `Hey ${playerName} 👋  
-    Thank you for playing My Colour Guessing Game 😉
-MorcoBle 🎨`;
+  messageText.innerHTML =
+    `Hey ${playerName} 👋  <br>
+    Thank you for playing My Colour Guessing Game 😉 <br>
+      Regards MorcoBle 🎨`;
     //  noBtn.remove();
       
       //  newGameBtn.style.display = "none";
