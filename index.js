@@ -70,11 +70,14 @@ function showWelcome() {
 
   messageText.className = "game-message welcome";
   messageText.textContent =
-    `Welcome ${playerName} 👋  
-     Would you like to play MorcoBle Colour Guessing Game? 🎨`;
+    `Welcome ${playerName} 👋
+This is MorcoBle Colour Guessing Game 🎨
+A simple game with a clever twist
+Take a breath, relax, and trust your eyes.
+Something fun and a little tricky 😉`;
 
   const okBtn = document.createElement("button");
-  okBtn.textContent = "OK, let's play 🎮";
+  okBtn.textContent = "OK, let's play 😉🎮";
   okBtn.addEventListener("click", startGame);
 
   actionButtons.appendChild(okBtn);
@@ -242,7 +245,7 @@ function endGame() {
        Final score: ${score}`;
   } else {
     messageText.textContent =
-      `❌ Game Over ${playerName}.  
+      `Nice try😉! ${playerName}.  
        Your final score is ${score}`;
   }
 
@@ -266,7 +269,8 @@ function thankYouMessage() {
   messageText.className = "game-message welcome";
   messageText.textContent =
     `Hey ${playerName} 👋  
-     Thank You for playing My Colour Guessing Game 😉. MorcoBle🎨`;
+    Thank you for playing My Colour Guessing Game 😉
+MorcoBle 🎨`;
     //  noBtn.remove();
       
       //  newGameBtn.style.display = "none";
