@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
+    <title>MorcoBle Colour Guessing Game</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <script defer src="index.js"></script> 
@@ -19,8 +19,8 @@
     </header>
 
   <main class="game-card">
-<p class="question">what’s the correct colour?</p>
-<p class="message" id="message"></p>
+<!-- <p class="question">what’s the correct colour?</p> -->
+<p class="game-message" id="message"></p>
 
     <div class="color-box" id="colorBox"></div>
 
@@ -28,7 +28,9 @@
 
     <p class="score">Score: <span id="score">0</span></p>
 
-    <button id="newGame">New Game</button>
+    <!-- <button id="newGame" class="newGame">New Game</button> -->
+    <div id="actionButtons" class="action-buttons"></div>
+
   </main>
 
   <footer class="footer-text"> 
@@ -37,6 +39,10 @@
     </h1>
    
   </footer>
+
+  <!-- <script>
+    const emailPatteren = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/
+  </script> -->
     
 </body>
-</html>
+</html> 
